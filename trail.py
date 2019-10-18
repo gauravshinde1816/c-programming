@@ -1,9 +1,12 @@
-def c_gcd(a,b):
-    if b==0:
-        return a
-    else:
-        return c_gcd(b,a%b)
-n1=int(input("num1"))
-n2=int(input("num2"))
-ans=c_gcd(n1,n2)
-print("gcd of the two numbers is ",ans)
+def c_gcd(x,y):
+    while(y):
+        x,y = y , x%y
+    return x
+lst=list(map(int,input().split()))
+n1=lst[0]
+n2=lst[1]
+gcd = c_gcd(n1,n2)
+for i in range(2,len(lst)):
+    gcd=c_gcd(gcd,lst[i])
+print(gcd)
+
