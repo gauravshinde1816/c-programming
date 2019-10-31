@@ -1,16 +1,27 @@
-str=input()
-str=str.replace(" ","")
-str=str.lower()
-flag=[False]*26
-lst=list(str)
-for x in lst:
-    index=ord(x)-ord('a')
-    flag[index]=True
+n=int(input())
+lst=[]
 
-for x in flag:
-    if x==False:
-        print("not pangram")
+for j in range(n):
+    lst1=input().split()
+    if lst1[0]=="insert":
+        lst.insert(int(lst1[1]),int(lst1[2]))
+        # print(lst)
+    elif lst1[0]=="append":
+        lst.append(int(lst1[1]))
+        # print(lst)
+    elif lst1[0]=="remove":
+        lst.remove(int(lst1[1]))
+        # print(lst)
+    elif lst1[0]=="sort":
+        lst.sort()
+        # print(lst)
+    elif lst1[0]=="pop":
+        lst.pop()
+        # print(lst)
+    elif lst1[0]=="reverse":
+        lst.reverse()
         break
-    
-else:
-    print("pangram")
+        
+    else:
+        print(lst)
+
